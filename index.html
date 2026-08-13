@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineScope — Discover Your Next Film</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="#home" class="brand">
+            CINE<span>SCOPE</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+
+            <a href="#discover">Discover</a>
+
+            <a href="#watchlist">
+                Watchlist
+                <span id="watchlist-count">0</span>
+            </a>
+        </nav>
+
+        <button
+            id="theme-toggle"
+            class="icon-button"
+            aria-label="Toggle theme">
+            ◐
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    FEATURED TONIGHT
+                </p>
+
+                <h1>
+                    INTERSTELLAR
+                </h1>
+
+                <div class="hero-meta">
+
+                    <span>★ 8.7</span>
+
+                    <span>2014</span>
+
+                    <span>Sci-Fi</span>
+
+                    <span>2h 49m</span>
+
+                </div>
+
+                <p class="hero-description">
+                    A team of explorers travel beyond
+                    our galaxy in search of a future
+                    for humanity.
+                </p>
+
+                <div class="hero-actions">
+
+                    <button
+                        class="primary-btn"
+                        id="hero-watch">
+                        ▶ Watch Trailer
+                    </button>
+
+                    <button
+                        class="secondary-btn"
+                        id="hero-add">
+                        + Add to Watchlist
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DISCOVER ================= -->
+
+        <section id="discover" class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        EXPLORE
+                    </p>
+
+                    <h2>
+                        Find something worth watching.
+                    </h2>
+
+                </div>
+
+                <div class="search-box">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="movie-search"
+                        placeholder="Search movies..."
+                        autocomplete="off">
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= GENRE FILTERS ================= -->
+
+            <div class="filters">
+
+                <button
+                    class="filter active"
+                    data-genre="all">
+                    All
+                </button>
+
+                <button
+                    class="filter"
+                    data-genre="action">
+                    Action
+                </button>
+
+                <button
+                    class="filter"
+                    data-genre="sci-fi">
+                    Sci-Fi
+                </button>
+
+                <button
+                    class="filter"
+                    data-genre="drama">
+                    Drama
+                </button>
+
+                <button
+                    class="filter"
+                    data-genre="comedy">
+                    Comedy
+                </button>
+
+                <button
+                    class="filter"
+                    data-genre="thriller">
+                    Thriller
+                </button>
+
+            </div>
+
+
+            <!-- ================= MOOD MATCH ================= -->
+
+            <div class="mood-section">
+
+                <div class="mood-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            MOOD MATCH
+                        </p>
+
+                        <h3>
+                            What are you in the mood for?
+                        </h3>
+
+                    </div>
+
+                    <button
+                        id="clear-mood"
+                        class="clear-mood">
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <div class="mood-options">
+
+                    <button
+                        class="mood-btn"
+                        data-mood="mind">
+                        🧠 Mind-bending
+                    </button>
+
+                    <button
+                        class="mood-btn"
+                        data-mood="intense">
+                        🔥 Intense
+                    </button>
+
+                    <button
+                        class="mood-btn"
+                        data-mood="fun">
+                        😂 Fun
+                    </button>
+
+                    <button
+                        class="mood-btn"
+                        data-mood="emotional">
+                        💔 Emotional
+                    </button>
+
+                    <button
+                        class="mood-btn"
+                        data-mood="adventure">
+                        🚀 Adventure
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MOVIES ================= -->
+
+            <div
+                id="movie-grid"
+                class="movie-grid">
+            </div>
+
+            <p
+                id="no-results"
+                class="no-results">
+                No movies found.
+            </p>
+
+        </section>
+
+
+        <!-- ================= WATCHLIST ================= -->
+
+        <section
+            id="watchlist"
+            class="section watchlist-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        YOUR COLLECTION
+                    </p>
+
+                    <h2>
+                        My Watchlist
+                    </h2>
+
+                </div>
+
+                <span id="watchlist-total">
+                    0 saved
+                </span>
+
+            </div>
+
+
+            <div
+                id="watchlist-grid"
+                class="movie-grid">
+            </div>
+
+
+            <div
+                id="empty-watchlist"
+                class="empty-watchlist">
+
+                <div class="empty-icon">
+                    ♡
+                </div>
+
+                <h3>
+                    Your watchlist is empty.
+                </h3>
+
+                <p>
+                    Save movies you want to watch later
+                    and they'll appear here.
+                </p>
+
+                <a
+                    href="#discover"
+                    class="secondary-btn">
+                    Discover Movies
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= MOVIE DETAILS MODAL ================= -->
+
+    <div
+        id="movie-modal"
+        class="modal"
+        aria-hidden="true">
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-content">
+
+            <button
+                id="modal-close"
+                class="modal-close"
+                aria-label="Close">
+                ×
+            </button>
+
+            <div id="modal-body">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TRAILER MODAL ================= -->
+
+    <div
+        id="trailer-modal"
+        class="modal"
+        aria-hidden="true">
+
+        <div class="modal-backdrop"></div>
+
+        <div class="trailer-box">
+
+            <button
+                id="trailer-close"
+                class="modal-close"
+                aria-label="Close">
+                ×
+            </button>
+
+            <div class="trailer-placeholder">
+
+                <div class="play-symbol">
+                    ▶
+                </div>
+
+                <h3>
+                    Trailer Preview
+                </h3>
+
+                <p>
+                    Trailer preview interface
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="brand">
+            CINE<span>SCOPE</span>
+        </div>
+
+        <p>
+            Discover. Save. Watch.
+        </p>
+
+        <small>
+            © 2026 CineScope
+        </small>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
